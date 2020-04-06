@@ -74,12 +74,30 @@ h2 {
 .bar:nth-child(10) { left: 90px; animation-duration: 442ms; }
 
 .play-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 170px;
+  width: 350px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.play-container .inside {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.anim polygon, .anim polyline {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 1;
+  animation: dash 50s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
